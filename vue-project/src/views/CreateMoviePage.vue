@@ -1,14 +1,13 @@
 <script setup>
-import TheFooter from '@/components/basic/TheFooter.vue';
-import TheHeader from '@/components/basic/TheHeader.vue';
+import CreateMovieHeader from '@/components/movie/CreateMovieHeader.vue';
+import MovieForm from '@/components/movie/MovieForm.vue';
+
 
 </script>
 
 <template>
-    <TheHeader/>
     <main>
-    
-    
+        <CreateMovieHeader/>
+        <MovieForm/>
     </main>
-    <TheFooter/>
 </template>

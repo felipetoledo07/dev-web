@@ -1,3 +1,12 @@
+<script setup>
+import MovieHeader from '@/components/movie/MovieHeader.vue';
+import TheMovie from '@/components/movie/TheMovie.vue';
+
+</script>
+
 <template>
-    <div></div>
+    <main>
+        <MovieHeader/>
+        <TheMovie/>
+    </main>
 </template>

@@ -1,37 +1,21 @@
 <script setup>
-import { reactive } from 'vue';
 import MovieItem from './MovieItem.vue';
+import { useMoviesStore } from '@/stores/stores';
 
-const movies = reactive([
-        {
-            id: 1,
-            titulo: "Filme teste",
-            ano: 2023,
-            genero: "XPTO"
-
-        },
-        {
-            id: 1,
-            titulo: "Filme teste",
-            ano: 2023,
-            genero: "XPTO"
-
-        }
-    ])
+const movieStore = useMoviesStore()
 
 </script>
 
 
 <template>
 
-    <div>
-        <template v-if="movies.length === 0">
+    <div class="movie-container">
+        <template v-if="movieStore.movies.length === 0">
             <div>Não existem filmes cadastrados</div>
         </template>
         <template v-else>
-            <div class="movie-list-container" v-for="movie in movies" :key="movie.id">
+            <div class="movie-list-container" v-for="movie in movieStore.movies" :key="movie.id">
                 <MovieItem :movie="movie" ></MovieItem>
-                
             </div>
         </template>
     </div>
@@ -45,5 +29,11 @@ const movies = reactive([
         justify-content: center;
         align-items: center;
         margin-top: 4px;
+        background-color: #ffffff;
+    }
+
+    .movie-container {
+        margin: 40px 0 20px 0;
+        overflow: scroll;
     }
 </style>

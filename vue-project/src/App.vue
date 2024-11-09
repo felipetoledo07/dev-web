@@ -1,11 +1,15 @@
 <script setup>
-import MainPage from './views/MainPage.vue';
+import TheHeader from '@/components/basic/TheHeader.vue';
+import TheFooter from '@/components/basic/TheFooter.vue';
+import { RouterView } from 'vue-router'
 </script>
 
 <template>
     
   <div class="wrapper">
-    <MainPage/>
+    <TheHeader/>
+    <RouterView />
+    <TheFooter/>
   </div>
 
 </template>
