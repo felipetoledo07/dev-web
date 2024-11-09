@@ -22,18 +22,25 @@
             return alert("Informações faltantes para criação do filme. Preencha os campos obrigatórios")
         }
 
-
         const yearBeforeFirstCreatedMovie = year.value < 1895
         const yearGreaterThanCurrentYear = year.value > new Date().getFullYear()
 
         if(yearBeforeFirstCreatedMovie || yearGreaterThanCurrentYear) {
             return alert("Ano informado inválido")
         }
+        
+        const titleGreaterThan81 = title.value.length > 81
+        if(titleGreaterThan81) {
+            return alert("Título com quantidade máxima de caracteres superado")
+        }
 
-        movieStore.id++
-
+        const genderGreaterThan20 = gender.value.length > 20
+        if(genderGreaterThan20) {
+            return alert("Gênero com quantidade máxima de caracteres superado")
+        }
+        
         const movie = {
-        "id": movieStore.id,
+        "id": ++movieStore.id,
         "title": title.value,
         "year": year.value,
         "gender": gender.value
